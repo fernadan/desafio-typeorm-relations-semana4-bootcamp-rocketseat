@@ -87,7 +87,7 @@ describe('App', () => {
     );
   });
 
-  it('should not be able to create a customer with one e-mail thats already registered', async () => {
+  it('should not be able to create a product with one name thats already registered', async () => {
     const product = await request(app).post('/products').send({
       name: 'Produto 01',
       price: 500,
@@ -249,7 +249,7 @@ describe('App', () => {
         products: [
           {
             id: product.body.id,
-            quantity: 5,
+            quantity: 6,
           },
         ],
       });
@@ -258,7 +258,7 @@ describe('App', () => {
 
     expect(foundProduct).toEqual(
       expect.objectContaining({
-        quantity: 40,
+        quantity: 39,
       }),
     );
   });
